@@ -1,0 +1,91 @@
+@import 'colors';
+@import 'media-queries';
+
+//can be called in any css div
+%align-center{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    background: $light;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    z-index:10;
+    position: relative;
+
+    &__logo {
+        color: $main;
+        font-family: 'Courier New', Courier, monospace;
+        cursor:pointer;
+        text-shadow: 1px 2px rgb(77, 0, 129);
+        font-size: 40px;
+        font-weight:bolder;
+        text-decoration: none;
+        list-style-type: none;
+        margin-left: 24px;
+        @extend %align-center;
+        } 
+
+        &__bars{
+            opacity: 0;
+        
+            @include tablet {
+                color: $dark;
+                opacity: 1;  
+                position: absolute;
+                top: 22px;
+                right: 20px;
+                font-size: 30px;
+            }    
+}
+
+&__menu{
+    @extend %align-center;
+    text-align: center;
+    margin-right: 24px;
+
+    @include tablet{
+        display: none;
+    }
+
+    &--links {
+        color: black;
+        @extend %align-center;
+        justify-content:center;
+        text-decoration: none;
+        padding:0 1rem;
+
+        &:hover{
+            color: $main;
+            text-shadow: 0.5px 1px rgb(77, 0, 129);
+
+            transition:all 0.1s ease-in;
+        }
+      }
+
+      #button{
+        padding: 12px 24px;
+        border: none;
+        outline: none;
+        border: 12px;
+        border-radius:50px;
+        background:$main;
+        margin-left: 16px;
+        color: #fff;
+        box-shadow: 0.5px 2px 2px #6e00bd;
+
+      &:hover{
+          background:$dark;
+          box-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+          transition:all 0.4s ease;
+  
+      }
+    }
+
+}
+
+}
